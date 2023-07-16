@@ -32,6 +32,19 @@ var initPage = {
       descElement.innerHTML = "Started?: " + "Finished";
     }
 
+    var descText = "";
+    if (data[0].status === "BEFORE") {
+      descText = "Not Yet";
+      descElement.style.backgroundColor = "yellow"; // Set background color for "Not Yet"
+    } else if (data[0].status === "CODING") {
+      descText = "Ongoing";
+      descElement.style.backgroundColor = "orange"; // Set background color for "Ongoing"
+    } else {
+      descText = "Finished";
+      descElement.style.backgroundColor = "green"; // Set background color for "Finished"
+    }
+    descElement.innerHTML = "Started?: " + descText;
+
     for (let i = 0; i < data.length; i++) {
       const title1m = document.createElement('p');
       const desc1m = document.createElement('p');
