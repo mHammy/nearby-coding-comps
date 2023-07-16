@@ -35,23 +35,22 @@
     </nav>
 
     <main class="columns is-mobile is-flex">
-        <div class="column panel is-one-quarter my-2 mx-2">
+        <div class="column panel is-one-quarter my-1 mx-1">
             <p class="panel-heading">Recently Viewed</p>
             <div id="historyMain">
             </div>
         </div>
-        <div id="contest1" class="column is-fluid my-2">
+        <div class="column is-three-quarters my-2">
             <div class="columns is-centered center-column is-multiline">
                 <article class="column section panel-heading box is-full">
                     <h1 class="title">Code Competitions</h1>
                     <h2 class="subtitle">Click one to learn more!</h2>
                 </article>
-
-                <div class="contest column is-one-fourth">
+                <div id="contest1" class="contest column is-one-quarter has-text-centered p-2">
                     <p class="title">CodeForces</p>
-                    <p id="description-t1" class="subtitle">Loading Description</p>
+                    <p id="description-t1" class="subtitle">Nothing here!</p>
                     <p class="subtitle">Upcoming contest</p>
-                    <p id="date-t1"></p>
+                    <p id="date-t1">No Current Info</p>
                     <br>
                     <p id="btn1" class="button btn-this js-modal-trigger" data-target="modal-js-btn1">Click for more info</p>
                     <div id="modal-js-btn1" class="modal">
@@ -72,11 +71,11 @@
                         </div>
                       </div>
                 </div>
-                <div id="contest2" class="contest column is-one-fourth">
+                <div id="contest2" class="contest column is-one-quarter has-text-centered p-2">
                     <p class="title">CodeChef</p>
-                    <p id="description-t2" class="subtitle">Short description</p>
+                    <p id="description-t2" class="subtitle">Nothing here!</p>
                     <p class="subtitle">Upcoming contest</p>
-                    <p id="date-t2"></p>
+                    <p id="date-t2">No Current Info</p>
                     <br>
                     <p id="btn2" class="button btn-this js-modal-trigger" data-target="modal-js-btn2">Click for more info</p>
                     <div id="modal-js-btn2" class="modal">
@@ -97,11 +96,11 @@
                         </div>
                       </div>
                 </div>
-                <div id="contest3" class="contest column is-one-fourth">
+                <div id="contest3" class="contest column is-one-quarter has-text-centered p-2">
                     <p class="title">atCoder</p>
-                    <p id="description-t3" class="subtitle">Short description</p>
+                    <p id="description-t3" class="subtitle">Nothing here!</p>
                     <p class="subtitle">Upcoming contest</p>
-                    <p id="date-t3"></p>
+                    <p id="date-t3">No Current Info</p>
                     <br>
                     <p id="btn3" class="button btn-this js-modal-trigger" data-target="modal-js-btn3">Click for more info</p>
                     <div id="modal-js-btn3" class="modal">
@@ -122,11 +121,11 @@
                         </div>
                       </div>
                 </div>
-                <div id="contest4" class="contest column is-one-fourth">
+                <div id="contest4" class="contest column is-one-quarter has-text-centered p-2">
                     <p class="title">HackerRank</p>
-                    <p id="description-t4" class="subtitle">Short description</p>
+                    <p id="description-t4" class="subtitle">Nothing here!</p>
                     <p class="subtitle">Upcoming contest</p>
-                    <p id="date-t4"></p>
+                    <p id="date-t4">No Current Info</p>
                     <br>
                     <p id="btn4" class="button btn-this js-modal-trigger" data-target="modal-js-btn4">Click for more info</p>
                     <div id="modal-js-btn4" class="modal">
@@ -147,7 +146,7 @@
                         </div>
                       </div>
                 </div>
-                <div id="contest5" class="contest column is-one-fourth">
+                <div id="contest5" class="contest column is-one-quarter has-text-centered p-2">
                     <p class="title">HackerEarth</p>
                     <p id="description-t5" class="subtitle">Short description</p>
                     <p class="subtitle">Upcoming contest</p>
@@ -172,7 +171,7 @@
                         </div>
                       </div>
                 </div>
-                <div id="contest6" class="contest column is-one-fourth">
+                <div id="contest6" class="contest column is-one-quarter has-text-centered p-2">
                     <p class="title">LeetCode</p>
                     <p id="description-t6" class="subtitle">Short description</p>
                     <p class="subtitle">Upcoming contest</p>
@@ -192,6 +191,81 @@
                           <footer class="modal-card-foot">
                             <a href="https://leetcode.com" class="button is-success" target="_blank">Head to LeetCode</a>
                             <button id="favbtn6" class="button is-link fav-buttons">Add to Favorites</button>
+                            <button class="button">Go Back</button>
+                          </footer>
+                        </div>
+                      </div>
+                </div>
+                <div id="contest7" class="contest column is-one-quarter has-text-centered p-2">
+                    <p class="title">CodeForces::Gym</p>
+                    <p id="description-t7" class="subtitle">Nothing here!</p>
+                    <p class="subtitle">Upcoming contest</p>
+                    <p id="date-t7">No Current Info</p>
+                    <br>
+                    <p id="btn7" class="button btn-this js-modal-trigger" data-target="modal-js-btn7">Click for more info</p>
+                    <div id="modal-js-btn7" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">CodeForces::Gym Competitions</p>
+                            <button class="delete" aria-label="close"></button>
+                          </header>
+                          <section id="t7m" class="modal-card-body">
+                            <!-- Content via API loop in js -->
+                          </section>
+                          <footer class="modal-card-foot">
+                            <a href="https://codeforces.com/gyms" class="button is-success" target="_blank">Head to CodeForces::Gym</a>
+                            <button id="favbtn7" class="button is-link fav-buttons">Add to Favorites</button>
+                            <button class="button">Go Back</button>
+                          </footer>
+                        </div>
+                      </div>
+                </div>
+                <div id="contest8" class="contest column is-one-quarter has-text-centered p-2">
+                    <p class="title">csAcademy</p>
+                    <p id="description-t8" class="subtitle">Nothing here!</p>
+                    <p class="subtitle">Upcoming contest</p>
+                    <p id="date-t8">No Current Info</p>
+                    <br>
+                    <p id="btn8" class="button btn-this js-modal-trigger" data-target="modal-js-btn8">Click for more info</p>
+                    <div id="modal-js-btn8" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">csAcademy Competitions</p>
+                            <button class="delete" aria-label="close"></button>
+                          </header>
+                          <section id="t8m" class="modal-card-body">
+                            <!-- Content via API loop in js -->
+                          </section>
+                          <footer class="modal-card-foot">
+                            <a href="https://csacademy.com" class="button is-success" target="_blank">Head to csAcademy</a>
+                            <button id="favbtn8" class="button is-link fav-buttons">Add to Favorites</button>
+                            <button class="button">Go Back</button>
+                          </footer>
+                        </div>
+                      </div>
+                </div>
+                <div id="contest9" class="contest column is-one-quarter has-text-centered p-2">
+                    <p class="title">TopCoder</p>
+                    <p id="description-t9" class="subtitle">Nothing here!</p>
+                    <p class="subtitle">Upcoming contest</p>
+                    <p id="date-t9">No Current Info</p>
+                    <br>
+                    <p id="btn1" class="button btn-this js-modal-trigger" data-target="modal-js-btn9">Click for more info</p>
+                    <div id="modal-js-btn9" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">TopCoder Competitions</p>
+                            <button class="delete" aria-label="close"></button>
+                          </header>
+                          <section id="t9m" class="modal-card-body">
+                            <!-- Content via API loop in js -->
+                          </section>
+                          <footer class="modal-card-foot">
+                            <a href="https://www.topcoder.com" class="button is-success" target="_blank">Head to TopCoder</a>
+                            <button id="favbtn9" class="button is-link fav-buttons">Add to Favorites</button>
                             <button class="button">Go Back</button>
                           </footer>
                         </div>
