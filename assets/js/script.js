@@ -11,11 +11,15 @@ var modal3 = document.getElementById("t3m");
 var modal4 = document.getElementById("t4m");
 var modal5 = document.getElementById("t5m");
 var modal6 = document.getElementById("t6m");
+var modal7 = document.getElementById("t7m");
+var modal8 = document.getElementById("t8m");
+var modal9 = document.getElementById("t9m");
 var historyMain = document.getElementById("historyMain");
 
 // functions that populate the data on the tiles for contests
 var initPage = {
   setCompetitionInfo: function (data, descElement, dateElement, modalElement) {
+
     var dateStr = data[0].start_time;
     var startDate = new Date(dateStr);
     var formattedStartDate = startDate.toLocaleString();
@@ -138,6 +142,27 @@ var initPage = {
     var dateElement = document.getElementById("date-t6");
     var modalElement = modal6;
     this.setCompetitionInfo(data, descElement, dateElement, modalElement);
+  },
+
+  codeForcesGymInfo: function (data) {
+    var descElement = document.getElementById("description-t7");
+    var dateElement = document.getElementById("date-t7");
+    var modalElement = modal7;
+    this.setCompetitionInfo(data, descElement, dateElement, modalElement);
+  },
+
+  csAcademyInfo: function (data) {
+    var descElement = document.getElementById("description-t8");
+    var dateElement = document.getElementById("date-t8");
+    var modalElement = modal8;
+    this.setCompetitionInfo(data, descElement, dateElement, modalElement);
+  },
+
+  topCoderInfo: function (data) {
+    var descElement = document.getElementById("description-t9");
+    var dateElement = document.getElementById("date-t9");
+    var modalElement = modal9;
+    this.setCompetitionInfo(data, descElement, dateElement, modalElement);
   }
 };
 
@@ -148,18 +173,24 @@ var fetchPromises = [
   fetch("https://kontests.net/api/v1/code_chef").then(response => response.json()),
   fetch("https://kontests.net/api/v1/hacker_rank").then(response => response.json()),
   fetch("https://kontests.net/api/v1/hacker_earth").then(response => response.json()),
-  fetch("https://kontests.net/api/v1/leet_code").then(response => response.json())
+  fetch("https://kontests.net/api/v1/leet_code").then(response => response.json()),
+  fetch("https://kontests.net/api/v1/codeforces_gym").then(response => response.json()),
+  fetch("https://kontests.net/api/v1/cs_academy").then(response => response.json()),
+  fetch("https://kontests.net/api/v1/top_coder").then(response => response.json())
 ];
 
 Promise.all(fetchPromises)
   .then(responses => {
-    const [atCoderData, codeForcesData, codeChefData, hackerRankData, hackerEarthData, leetCodeData] = responses;
+    const [atCoderData, codeForcesData, codeChefData, hackerRankData, hackerEarthData, leetCodeData, codeForcesGymData, csAcademyData, topCoderData] = responses;
     initPage.atCoderInfo(atCoderData);
     initPage.codeForcesInfo(codeForcesData);
     initPage.codeChefInfo(codeChefData);
     initPage.hackerRankInfo(hackerRankData);
     initPage.hackerEarthInfo(hackerEarthData);
     initPage.leetCodeInfo(leetCodeData);
+    initPage.codeForcesGymInfo(codeForcesGymData);
+    initPage.csAcademyInfo(csAcademyData);
+    initPage.topCoderInfo(topCoderData);
   })
   .catch(error => {
     console.log('Error:', error);
@@ -212,7 +243,10 @@ window.addEventListener('load', () => {
       btn3: '#modal-js-btn3',
       btn4: '#modal-js-btn4',
       btn5: '#modal-js-btn5',
-      btn6: '#modal-js-btn6'
+      btn6: '#modal-js-btn6',
+      btn7: '#modal-js-btn7',
+      btn8: '#modal-js-btn8',
+      btn9: '#modal-js-btn9'
     };
 
     selectedButtons.forEach(entry => {
