@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <nav class="navbar is-light is-flex" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-light is-flex my-1" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item-img-max-height level-item" href="#">
                 <img class="" src="./assets/images/Nearby-mid.png" width="300" height="107"></img>
@@ -35,12 +35,12 @@
     </nav>
 
     <main class="columns is-mobile is-flex">
-        <div class="column panel is-one-quarter">
+        <div class="column panel is-one-quarter my-2 mx-2">
             <p class="panel-heading">Recently Viewed</p>
             <div id="historyMain">
             </div>
         </div>
-        <div class="column is-half">
+        <div class="column is-fluid my-2">
             <div class="columns is-centered center-column is-multiline">
                 <article class="column section panel-heading box is-full">
                     <h1 class="title">Code Competitions</h1>
@@ -49,11 +49,28 @@
 
                 <div class="contest column is-one-fourth">
                     <p class="title">CodeForces</p>
-                    <p id="description-t1" class="subtitle">Short description</p>
+                    <p id="description-t1" class="subtitle">Loading Description</p>
                     <p class="subtitle">Upcoming contest</p>
                     <p id="date-t1"></p>
                     <br>
-                    <p id="btn1" class="button">Click for more info</p>
+                    <p id="btn1" class="button btn-this js-modal-trigger" data-target="modal-js-btn1">Click for more info</p>
+                    <div id="modal-js-btn1" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">CodeForces Competitions</p>
+                            <button class="delete" aria-label="close"></button>
+                          </header>
+                          <section id="t1m" class="modal-card-body">
+                            <!-- Content via API loop in js -->
+                          </section>
+                          <footer class="modal-card-foot">
+                            <a href="https://codeforces.com" class="button is-success" target="_blank">Head to CodeForces</a>
+                            <button id="favbtn1" class="button is-link fav-buttons">Add to Favorites</button>
+                            <button class="button">Go Back</button>
+                          </footer>
+                        </div>
+                      </div>
                 </div>
                 <div class="contest column is-one-fourth">
                     <p class="title">CodeChef</p>
@@ -61,7 +78,24 @@
                     <p class="subtitle">Upcoming contest</p>
                     <p id="date-t2"></p>
                     <br>
-                    <p id="btn2" class="button">Click for more info</p>
+                    <p id="btn2" class="button btn-this js-modal-trigger" data-target="modal-js-btn2">Click for more info</p>
+                    <div id="modal-js-btn2" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">CodeChef Competitions</p>
+                            <button class="delete" aria-label="close"></button>
+                          </header>
+                          <section id="t2m" class="modal-card-body">
+                            <!-- Content via API loop in js -->
+                          </section>
+                          <footer class="modal-card-foot">
+                            <a href="https://www.codechef.com" class="button is-success" target="_blank">Head to CodeChef</a>
+                            <button id="favbtn2" class="button is-link fav-buttons">Add to Favorites</button>
+                            <button class="button">Go Back</button>
+                          </footer>
+                        </div>
+                      </div>
                 </div>
                 <div class="contest column is-one-fourth">
                     <p class="title">atCoder</p>
@@ -69,7 +103,24 @@
                     <p class="subtitle">Upcoming contest</p>
                     <p id="date-t3"></p>
                     <br>
-                    <p id="btn3" class="button">Click for more info</p>
+                    <p id="btn3" class="button btn-this js-modal-trigger" data-target="modal-js-btn3">Click for more info</p>
+                    <div id="modal-js-btn3" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">atCoder Competitions</p>
+                            <button class="delete" aria-label="close"></button>
+                          </header>
+                          <section id="t3m" class="modal-card-body">
+                            <!-- Content via API loop in js -->
+                          </section>
+                          <footer class="modal-card-foot">
+                            <a href="https://atcoder.jp" class="button is-success" target="_blank">Head to atCoder</a>
+                            <button id="favbtn3" class="button is-link fav-buttons">Add to Favorites</button>
+                            <button class="button">Go Back</button>
+                          </footer>
+                        </div>
+                      </div>
                 </div>
                 <div class="contest column is-one-fourth">
                     <p class="title">HackerRank</p>
@@ -77,7 +128,24 @@
                     <p class="subtitle">Upcoming contest</p>
                     <p id="date-t4"></p>
                     <br>
-                    <p id="btn4" class="button">Click for more info</p>
+                    <p id="btn4" class="button btn-this js-modal-trigger" data-target="modal-js-btn4">Click for more info</p>
+                    <div id="modal-js-btn4" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">HackerRank Competitions</p>
+                            <button class="delete" aria-label="close"></button>
+                          </header>
+                          <section id="t4m" class="modal-card-body">
+                            <!-- Content via API loop in js -->
+                          </section>
+                          <footer class="modal-card-foot">
+                            <a href="https://www.hackerrank.com" class="button is-success" target="_blank">Head to HackerRank</a>
+                            <button id="favbtn4" class="button is-link fav-buttons">Add to Favorites</button>
+                            <button class="button">Go Back</button>
+                          </footer>
+                        </div>
+                      </div>
                 </div>
                 <div class="contest column is-one-fourth">
                     <p class="title">HackerEarth</p>
@@ -85,7 +153,24 @@
                     <p class="subtitle">Upcoming contest</p>
                     <p id="date-t5"></p>
                     <br>
-                    <p id="btn5" class="button">Click for more info</p>
+                    <p id="btn5" class="button btn-this js-modal-trigger" data-target="modal-js-btn5">Click for more info</p>
+                    <div id="modal-js-btn5" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">HackerEarth Competitions</p>
+                            <button class="delete" aria-label="close"></button>
+                          </header>
+                          <section id="t5m" class="modal-card-body">
+                            <!-- Content via API loop in js -->
+                          </section>
+                          <footer class="modal-card-foot">
+                            <a href="https://www.hackerearth.com" class="button is-success" target="_blank">Head to HackerEarth</a>
+                            <button id="favbtn5" class="button is-link fav-buttons">Add to Favorites</button>
+                            <button class="button">Go Back</button>
+                          </footer>
+                        </div>
+                      </div>
                 </div>
                 <div class="contest column is-one-fourth">
                     <p class="title">LeetCode</p>
@@ -93,20 +178,32 @@
                     <p class="subtitle">Upcoming contest</p>
                     <p id="date-t6"></p>
                     <br>
-                    <p id="btn6" class="button">Click for more info</p>
+                    <p id="btn6" class="button btn-this js-modal-trigger" data-target="modal-js-btn6">Click for more info</p>
+                    <div id="modal-js-btn6" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                          <header class="modal-card-head">
+                            <p class="modal-card-title">LeetCode Competitions</p>
+                            <button class="delete" aria-label="close"></button>
+                          </header>
+                          <section id="t6m" class="modal-card-body">
+                            <!-- Content via API loop in js -->
+                          </section>
+                          <footer class="modal-card-foot">
+                            <a href="https://leetcode.com" class="button is-success" target="_blank">Head to LeetCode</a>
+                            <button id="favbtn6" class="button is-link fav-buttons">Add to Favorites</button>
+                            <button class="button">Go Back</button>
+                          </footer>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>
         </div>
-        <div class="column is-one-quarter">
-            <div class="column">
-                <p class="panel-heading">Favorites</p>
-                <a class="panel-block is-active box">Test History</a>
-            </div>
-        </div>
     </main>
 
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/modal.js"></script>
 </body>
 
 </html>
