@@ -1,10 +1,4 @@
 // grabbing globals once to reduce load
-var button1 = document.getElementById("btn1");
-var button2 = document.getElementById("btn2");
-var button3 = document.getElementById("btn3");
-var button4 = document.getElementById("btn4");
-var button5 = document.getElementById("btn5");
-var button6 = document.getElementById("btn6");
 var modal1 = document.getElementById("t1m");
 var modal2 = document.getElementById("t2m");
 var modal3 = document.getElementById("t3m");
@@ -114,7 +108,7 @@ var initPage = {
 
     console.log(data);
   },
-
+// each tile getting updated with information external view and internal modal view
   codeForcesInfo: function (data) {
     var descElement = document.getElementById("description-t1");
     var dateElement = document.getElementById("date-t1");
@@ -291,7 +285,7 @@ window.addEventListener('load', () => {
       updateHistoryListing();
     }
   
-    // code to open modal on index.html based on URL query parameter
+    // code to open modal on index.html based on URL query
     const modalTargets = {
         btn1: '#modal-js-btn1',
         btn2: '#modal-js-btn2',
