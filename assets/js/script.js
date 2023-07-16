@@ -211,99 +211,108 @@ Promise.all(fetchPromises)
 
 // button event listeners
 window.addEventListener('load', () => {
-  // grabbing all the buttons
-  const buttons = document.querySelectorAll('.btn-this');
-
-  // array for localStorage
-  let selectedButtons = [];
-
-  // the event listener for grabbing button inputs to add to history
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const titleText = button.parentNode.querySelector('.title').textContent;
-
-      // check if the title already exists in the selectedButtons array
-      const titleExists = selectedButtons.some(entry => entry.title === titleText);
-      if (titleExists) {
-        return;
-      }
-
-      // this adds the button ID and the title text of the selection to the array
-      selectedButtons.push({ buttonId: button.id, title: titleText });
-
-      // limiting the number of selected buttons to 7
-      if (selectedButtons.length > 7) {
-        selectedButtons.shift();
-      }
-
-      // setting the localStorage
-      localStorage.setItem('selectedButtons', JSON.stringify(selectedButtons));
-
-      // update the history listing
-      updateHistoryListing();
+    // grabbing all the buttons
+    const buttons = document.querySelectorAll('.btn-this');
+  
+    // array for localStorage
+    let selectedButtons = [];
+  
+    // the event listener for grabbing button inputs to add to history
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const titleText = button.parentNode.querySelector('.title').textContent;
+  
+        // check if the title already exists in the selectedButtons array
+        const titleExists = selectedButtons.some(entry => entry.title === titleText);
+        if (titleExists) {
+          return;
+        }
+  
+        // this adds the button ID and the title text of the selection to the array
+        selectedButtons.push({ buttonId: button.id, title: titleText });
+  
+        // limiting the number of selected buttons to 7
+        if (selectedButtons.length > 7) {
+          selectedButtons.shift();
+        }
+  
+        // setting the localStorage
+        localStorage.setItem('selectedButtons', JSON.stringify(selectedButtons));
+  
+        // update the history listing
+        updateHistoryListing();
+      });
     });
-  });
-
-  // function to update the history listing
-  function updateHistoryListing() {
-    const historyMain = document.getElementById('historyMain');
-    historyMain.innerHTML = "";
-
-    //mapping of button IDs to modal targets for search history
-    const modalTargets = {
-      btn1: '#modal-js-btn1',
-      btn2: '#modal-js-btn2',
-      btn3: '#modal-js-btn3',
-      btn4: '#modal-js-btn4',
-      btn5: '#modal-js-btn5',
-      btn6: '#modal-js-btn6',
-      btn7: '#modal-js-btn7',
-      btn8: '#modal-js-btn8',
-      btn9: '#modal-js-btn9'
-    };
-
-    selectedButtons.forEach(entry => {
-      const historyEntry = document.createElement("a");
-      historyEntry.href = "#";
-      historyEntry.classList.add("panel-block");
-      historyEntry.textContent = entry.title;
-      historyEntry.addEventListener('click', () => {
-        // redirect to the trigger modal when history entry is clicked
+  
+    // function to update the history listing
+    function updateHistoryListing() {
+      const historyMain = document.getElementById('historyMain');
+      historyMain.innerHTML = "";
+  
+      // mapping of button IDs to modal targets for search history
+      const modalTargets = {
+        btn1: '#modal-js-btn1',
+        btn2: '#modal-js-btn2',
+        btn3: '#modal-js-btn3',
+        btn4: '#modal-js-btn4',
+        btn5: '#modal-js-btn5',
+        btn6: '#modal-js-btn6',
+        btn7: '#modal-js-btn7',
+        btn8: '#modal-js-btn8',
+        btn9: '#modal-js-btn9'
+      };
+  
+      selectedButtons.forEach(entry => {
+        const historyEntry = document.createElement("a");
+        historyEntry.href = "#";
+        historyEntry.classList.add("panel-block");
+        historyEntry.textContent = entry.title;
+        historyEntry.id = entry.buttonId;
+        historyEntry.addEventListener('click', () => {
+          // redirect to index.html with the modal open
+          window.location.href = `index.html?modal=${entry.buttonId}`;
+        });
+        historyMain.append(historyEntry);
+      });
+    }
+  
+    // retrieving the array from localStorage and updating the buttons' selection history listings
+    const savedSelection = localStorage.getItem('selectedButtons');
+    if (savedSelection) {
+      selectedButtons = JSON.parse(savedSelection);
+      selectedButtons.forEach(entry => {
         const button = document.getElementById(entry.buttonId);
         if (button) {
-
-          if (modalTargets.hasOwnProperty(entry.buttonId)) {
-            // trigger the modal if the button ID exists in modalTargets mapping
-            const targetId = modalTargets[entry.buttonId];
-            const targetModal = document.querySelector(targetId);
-            if (targetModal) {
-              targetModal.classList.add('is-active');
-            } else {
-              console.error(`Modal target '${targetId}' not found.`);
-            }
-          } else {
-            console.error(`Button with ID '${entry.buttonId}' is missing href and not mapped to a modal target.`);
-          }
-        } else {
-          console.error(`Button with ID '${entry.buttonId}' not found.`);
+          button.classList.add('selected');
         }
       });
-      historyMain.append(historyEntry);
-    });
-  }
-
-  // retrieving the array from localStorage and updating the buttons' selection history listings
-  const savedSelection = localStorage.getItem('selectedButtons');
-  if (savedSelection) {
-    selectedButtons = JSON.parse(savedSelection);
-    selectedButtons.forEach(entry => {
-      const button = document.getElementById(entry.buttonId);
-      if (button) {
-        button.classList.add('selected');
+  
+      // update the history listing
+      updateHistoryListing();
+    }
+  
+    // code to open modal on index.html based on URL query parameter
+    const modalTargets = {
+        btn1: '#modal-js-btn1',
+        btn2: '#modal-js-btn2',
+        btn3: '#modal-js-btn3',
+        btn4: '#modal-js-btn4',
+        btn5: '#modal-js-btn5',
+        btn6: '#modal-js-btn6',
+        btn7: '#modal-js-btn7',
+        btn8: '#modal-js-btn8',
+        btn9: '#modal-js-btn9'
+    };
+  
+    const urlParams = new URLSearchParams(window.location.search);
+    const modalParam = urlParams.get('modal');
+    if (modalTargets.hasOwnProperty(modalParam)) {
+      const targetId = modalTargets[modalParam];
+      const targetModal = document.querySelector(targetId);
+      if (targetModal) {
+        targetModal.classList.add('is-active');
+      } else {
+        console.error(`Modal target '${targetId}' not found.`);
       }
-    });
-
-    // update the history listing
-    updateHistoryListing();
-  }
-});
+    }
+  });
