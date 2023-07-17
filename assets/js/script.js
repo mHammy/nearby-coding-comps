@@ -259,7 +259,7 @@ window.addEventListener('load', () => {
       selectedButtons.forEach(entry => {
         const historyEntry = document.createElement("a");
         historyEntry.href = "#";
-        historyEntry.classList.add("panel-block");
+        historyEntry.classList.add("panel-block" , "history-grad");
         historyEntry.textContent = entry.title;
         historyEntry.id = entry.buttonId;
         historyEntry.addEventListener('click', () => {
