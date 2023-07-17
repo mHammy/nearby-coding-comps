@@ -11,8 +11,8 @@ body {
 }
 
 .nav-bg-grad {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(161, 161, 161, 1) 61%, rgba(0, 212, 255, 1) 100%);
+  background: rgb(23,24,16);
+  background: linear-gradient(90deg, rgba(23,24,16,1) 28%, rgba(161,161,161,1) 62%, rgba(0,212,255,1) 100%);
 }
 
 .header-bg-grad {
